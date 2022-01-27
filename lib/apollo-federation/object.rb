@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'apollo-federation/has_directives'
+require 'apollo-federation/directives/key'
 
 module ApolloFederation
   module Object
@@ -16,6 +17,8 @@ module ApolloFederation
       end
 
       def key(fields:)
+        directive(ApolloFederation::Directives::Key, fields: fields)
+
         add_directive(
           name: 'key',
           arguments: [
