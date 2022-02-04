@@ -1,16 +1,27 @@
 # frozen_string_literal: true
 
 require 'apollo-federation/has_directives'
+require 'apollo-federation/directives/key'
+require 'apollo-federation/directives/requires'
+require 'apollo-federation/directives/external'
+require 'apollo-federation/directives/provides'
 
 module ApolloFederation
   module Field
     include HasDirectives
 
     def initialize(*args, external: false, requires: nil, provides: nil, **kwargs, &block)
+      kwargs[:directives] ||= {}
+
       if external
+        kwargs[:directives][ApolloFederation::Directives::External] = {}
+
         add_directive(name: 'external')
       end
+
       if requires
+        kwargs[:directives][ApolloFederation::Directives::Requires] = { fields: requires[:fields] }
+
         add_directive(
           name: 'requires',
           arguments: [
@@ -20,6 +31,8 @@ module ApolloFederation
         )
       end
       if provides
+        kwargs[:directives][ApolloFederation::Directives::Provides] = { fields: provides[:fields] }
+
         add_directive(
           name: 'provides',
           arguments: [
