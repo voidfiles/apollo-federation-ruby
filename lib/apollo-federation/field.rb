@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'apollo-federation/field_set_serializer'
 require 'apollo-federation/has_directives'
 require 'apollo-federation/directives/key'
 require 'apollo-federation/directives/requires'
@@ -26,7 +27,7 @@ module ApolloFederation
           name: 'requires',
           arguments: [
             name: 'fields',
-            values: requires[:fields],
+            values: ApolloFederation::FieldSetSerializer.serialize(requires[:fields]),
           ],
         )
       end
@@ -37,7 +38,7 @@ module ApolloFederation
           name: 'provides',
           arguments: [
             name: 'fields',
-            values: provides[:fields],
+            values: ApolloFederation::FieldSetSerializer.serialize(provides[:fields]),
           ],
         )
       end

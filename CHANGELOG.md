@@ -1,3 +1,24 @@
+# [2.2.0](https://github.com/Gusto/apollo-federation-ruby/compare/v2.1.0...v2.2.0) (2022-02-04)
+
+
+### Features
+
+* Get Apollo Federation to work with GraphQL 1.13.x ([#160](https://github.com/Gusto/apollo-federation-ruby/issues/160)) ([800001b](https://github.com/Gusto/apollo-federation-ruby/commit/800001baa5a54ab377998c651e7049da254c451b)), closes [#147](https://github.com/Gusto/apollo-federation-ruby/issues/147)
+
+# [2.1.0](https://github.com/Gusto/apollo-federation-ruby/compare/v2.0.3...v2.1.0) (2022-02-02)
+
+
+### Features
+
+* snake case field references ([f5506ae](https://github.com/Gusto/apollo-federation-ruby/commit/f5506aecd10ea0c4a72744be07e0a9ad5cd45b16))
+
+## [2.0.3](https://github.com/Gusto/apollo-federation-ruby/compare/v2.0.2...v2.0.3) (2022-02-02)
+
+
+### Bug Fixes
+
+* Attempt to remove platform specific lock on google-protobuf ([#171](https://github.com/Gusto/apollo-federation-ruby/issues/171)) ([7898c28](https://github.com/Gusto/apollo-federation-ruby/commit/7898c2851aca06f08fa2559652375769bb98dfd8))
+
 ## [2.0.2](https://github.com/Gusto/apollo-federation-ruby/compare/v2.0.1...v2.0.2) (2022-01-31)
 
 
